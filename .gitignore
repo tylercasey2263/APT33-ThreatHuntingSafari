@@ -1,0 +1,20 @@
+# Large telemetry data (25MB+ CSV)
+# Download separately or generate with SCYTHE
+for_slides/*
+
+# Old slide versions
+backups/*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscod
+
+# Slides
+*.pptx

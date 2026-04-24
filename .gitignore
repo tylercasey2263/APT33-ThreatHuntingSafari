@@ -1,20 +1,29 @@
-# Large telemetry data (25MB+ CSV)
-# Download separately or generate with SCYTHE
+# Research
 for_slides/*
 
-# Old slide versions
-backups/*
+# Old slide versions and local backups
+backups/
+
+# Slide deck and exported PDF (large binaries — not suitable for git)
+*.pptx
+
+
+# Office temporary / lock files
+~$*
+
+# Cowork / Claude local session settings
+.claude/
 
 # OS artifacts
 .DS_Store
+.DS_Store?
 Thumbs.db
 desktop.ini
+ehthumbs.db
 
 # Editor files
 *.swp
 *.swo
 *~
-.vscod
-
-# Slides
-*.pptx
+.vscode/
+.idea/

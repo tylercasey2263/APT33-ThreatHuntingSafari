@@ -1,4 +1,4 @@
-# Threat Hunting Safari: An Intelligence-Driven Hunt for APT33
+    # Threat Hunting Safari: An Intelligence-Driven Hunt for APT33
 
 **BSides KC 2026** — Tyler Casey, [SCYTHE](https://scythe.io)
 
@@ -28,12 +28,11 @@ Starting from a single line in Microsoft's August 2024 threat intelligence repor
 ## Repo Structure
 
 ```
-├── README.md                              # You are here
-├── resources.md                           # References, tools, and further reading
-├── splunk_queries_by_slide.md             # Every Splunk query used in the talk, by slide
-├── talk_outline.md                        # Detailed talk outline with speaker notes
-│
-├── BSidesKC_ThreatHuntingSafari_v4.pptx  # The slide deck (39 slides)
+├── README.md                                   # You are here
+├── resources.md                                # References, tools, and further reading
+├── splunk_queries_by_slide.md                  # Every Splunk query used in the talk, by slide
+├── LICENSE
+├── 2026_BSidesKC_ThreatHuntingSafari_APT33.pdf # Slide deck    
 │
 ├── sigma_rules/                           # 12 Sigma detection rules covering the full attack
 │   ├── file_event_win_susp_double_extension.yml
@@ -48,20 +47,9 @@ Starting from a single line in Microsoft's August 2024 threat intelligence repor
 │   ├── proc_creation_win_RAS_nonstandard_folder.yml
 │   ├── proc_creation_win_sysinternals_adexplorer_execution.yml
 │   └── file_event_win_susp_archive_creation.yml
-│
-└── for_slides/
-    ├── detection/
-    │   ├── apt33_splunk.csv               # Raw Splunk telemetry export from the emulation
-    │   └── images/                        # Splunk screenshots embedded in slides
-    │
-    ├── emulation/
-    │   ├── APT-33 Update-emulation_outline.md    # SCYTHE emulation plan (automated + manual)
-    │   ├── adversary-apt33-2025_SCYTHE_threat.json  # Importable SCYTHE threat package
-    │   └── microsoft_cti_apt33.md         # Full text of Microsoft's Peach Sandstorm report
-    │
-    └── template/
-        └── template_lockbit_hunt.md       # Workshop hunt template (LockBit scenario)
 ```
+
+> **Not tracked in git** (see `.gitignore`): the slide deck (`*.pptx`), exported PDF, raw Splunk telemetry CSV (`for_slides/detection/apt33_splunk.csv`), slide screenshot assets (`for_slides/detection/images/`), and local backups. To get the telemetry CSV, either run the SCYTHE emulation yourself or reach out directly.
 
 ---
 

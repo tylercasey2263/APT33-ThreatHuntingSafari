@@ -8,7 +8,7 @@ A 50-minute talk walking through a real, end-to-end threat hunt against APT33 (P
 
 ## What This Talk Covers
 
-Starting from a single line in Microsoft's August 2024 threat intelligence report, we hunt through Splunk telemetry and follow the evidence through 5 hunts and 12 pivots to reconstruct the full kill chain:
+Starting from a single line in [Microsoft's August 2024 threat intelligence report](https://www.microsoft.com/en-us/security/blog/2024/08/28/peach-sandstorm-deploys-new-custom-tickler-malware-in-long-running-intelligence-gathering-operations/), we hunt through Splunk telemetry and follow the evidence through 5 hunts and 12 pivots to reconstruct the full kill chain:
 
 1. **CTI to Hypothesis** — Extracting huntable procedures from the Microsoft Peach Sandstorm report
 2. **The Initial Hit** — Sigma rule match on a double-extension file (tickler.pdf.exe)
@@ -49,7 +49,6 @@ Starting from a single line in Microsoft's August 2024 threat intelligence repor
 │   └── file_event_win_susp_archive_creation.yml
 ```
 
-> **Not tracked in git** (see `.gitignore`): the slide deck (`*.pptx`), exported PDF, raw Splunk telemetry CSV (`for_slides/detection/apt33_splunk.csv`), slide screenshot assets (`for_slides/detection/images/`), and local backups. To get the telemetry CSV, either run the SCYTHE emulation yourself or reach out directly.
 
 ---
 
@@ -86,10 +85,6 @@ Starting from a single line in Microsoft's August 2024 threat intelligence repor
 ## How to Use These Resources
 
 **If you attended the talk** — `splunk_queries_by_slide.md` has every query shown on screen, ready to copy-paste into your own Splunk instance. The Sigma rules in `sigma_rules/` can be translated to your SIEM using [sigma-cli](https://github.com/SigmaHQ/sigma-cli) or [Sigconverter.io](https://sigconverter.io/).
-
-**If you want to replicate the hunt** — the SCYTHE threat package (`for_slides/emulation/adversary-apt33-2025_SCYTHE_threat.json`) can be imported into SCYTHE to generate the same telemetry in your own lab. The password for the zip is `r4inb0wUn1corn!`. The emulation outline covers every step — automated and manual — with module-level detail. The raw Splunk telemetry export from our emulation is in `for_slides/detection/apt33_splunk.csv` if you want to replay it without running the emulation yourself.
-
-**If you want to build your own hunt** — `for_slides/template/template_lockbit_hunt.md` is a worked example hunt (LockBit scenario) you can use as a structural template. The methodology is the same regardless of threat actor: CTI → Hypothesis → Initial Hit → Scope the Host → Follow Every Spoke → Pivot → Repeat.
 
 ---
 
